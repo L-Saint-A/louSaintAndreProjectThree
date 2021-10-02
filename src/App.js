@@ -2,8 +2,6 @@ import {useState, useEffect} from 'react';
 import './App.css';
 import axios from 'axios';
 
-
-
 function App() {
 
 const [weather, setWeather] = useState([]);
@@ -20,8 +18,7 @@ useEffect( ()=> {
     }
   }).then( (result) => {
     //save our response array to STATE
-    console.log(result.data)
-    setWeather(result.data)
+    setWeather(result.data.data.current_condition)
   });
 }, []);  
 
@@ -34,9 +31,15 @@ return (
           <select value="Something">Something</select>
         </div>
       </form>
+      {
+          weather.map( (oneDay) => {
+            return (
+              oneDay.id
+            )
+          })
+      }
     </div>
   );
-  
 }
 
 export default App;
