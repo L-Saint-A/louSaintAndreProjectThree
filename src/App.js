@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import './App.css';
 import axios from 'axios';
+import WeatherSectionOne from './WeatherSectionOne';
 
 function App() {
 
@@ -18,6 +19,7 @@ useEffect( ()=> {
     }
   }).then( (result) => {
     //save our response array to STATE
+    console.log(result.data.data.current_condition);
     setWeather(result.data.data.current_condition)
   });
 }, []);  
@@ -33,9 +35,9 @@ return (
       </form>
       {
           weather.map( (oneDay) => {
-            return (
-              oneDay.id
-            )
+            console.log(oneDay.temp_C, `Deg. C`)
+            console.log(oneDay.weatherIconUrl[0], `picture`)
+
           })
       }
     </div>
