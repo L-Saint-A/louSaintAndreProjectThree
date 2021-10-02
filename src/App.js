@@ -37,7 +37,9 @@ return (
           weather.map( (oneDay) => {
             console.log(oneDay.temp_C, `Deg. C`)
             console.log(oneDay.weatherIconUrl[0], `picture`)
-
+            return (
+              <div title={oneDay.temp_C}></div>
+            )
           })
       }
     </div>
