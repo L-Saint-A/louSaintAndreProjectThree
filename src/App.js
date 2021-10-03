@@ -13,8 +13,8 @@ useEffect( ()=> {
     url: `http://api.worldweatheronline.com/premium/v1/weather.ashx?key=5006b4f52810441184b183358212809`,
     dataResponse: 'json',
     params: {
-      q: 'Norman Wells',
-      num_of_days: 5,
+      q: 'Toronto',
+      num_of_days: 7,
       format: 'json'
     }
   }).then( (result) => {
@@ -26,7 +26,7 @@ console.log(weather)
 
 return (
 
-    <div className="App">
+    <div className="App wrapper">
       <h1>Ooooooh, hello...</h1>
       <form action="submit">
         <div id="userChoice1">
@@ -41,7 +41,7 @@ return (
       </form>
       <form action="submit">
         <div id="userChoice2">
-        <label for="forecase">Choose a weather time:   </label>
+        <label for="forecast">Choose a weather time:   </label>
         <select id="forecast" name="forecast">
         <option value="3">3</option>
         <option value="5">5</option>
@@ -49,11 +49,13 @@ return (
         </select> 
         </div>
       </form>
-      {
-          weather.map( (oneDay) => {
-            return <WeatherSectionOne key={oneDay.date} date={oneDay.date} high={oneDay.maxtempC} low={oneDay.mintempC}/>
-          })
-      }
+      <div className="container">
+        {
+            weather.map( (oneDay) => {
+              return <WeatherSectionOne key={oneDay.date} date={oneDay.date} high={oneDay.maxtempC} low={oneDay.mintempC}/>
+            })
+        }
+      </div>
     </div>
   );
 }
