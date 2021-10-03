@@ -13,31 +13,45 @@ useEffect( ()=> {
     url: `http://api.worldweatheronline.com/premium/v1/weather.ashx?key=5006b4f52810441184b183358212809`,
     dataResponse: 'json',
     params: {
-      q: 'Gatineau',
-      num_of_days: 7,
+      q: 'Norman Wells',
+      num_of_days: 5,
       format: 'json'
     }
   }).then( (result) => {
-    //save our response array to STATE
-    console.log(result.data.data.current_condition);
-    setWeather(result.data.data.current_condition)
+    setWeather(result.data.data.weather)
   });
 }, []);  
 
+console.log(weather)
+
 return (
+
     <div className="App">
       <h1>Ooooooh, hello...</h1>
       <form action="submit">
         <div id="userChoice1">
-          <select value="Toronto">Toronto</select>
-          <select value="Something">Something</select>
+        <label for="town">Choose a weather town:   </label>
+        <select id="town" name="town">
+        <option value="Gatineau">Hull</option>
+        <option value="Toronto">Toronto</option>
+        <option value="Norman Wells">Norman Wells</option>
+        <option value="Vik">Vik</option>
+        </select> 
+        </div>
+      </form>
+      <form action="submit">
+        <div id="userChoice2">
+        <label for="forecase">Choose a weather time:   </label>
+        <select id="forecast" name="forecast">
+        <option value="3">3</option>
+        <option value="5">5</option>
+        <option value="7">7</option>
+        </select> 
         </div>
       </form>
       {
           weather.map( (oneDay) => {
-            console.log(oneDay.temp_C, `Deg. C`)
-            console.log(oneDay.weatherIconUrl[0], `picture`)
-            console.log(oneDay.weatherDesc[0])
+            return <WeatherSectionOne key={oneDay.date} date={oneDay.date} high={oneDay.maxtempC} low={oneDay.mintempC}/>
           })
       }
     </div>
