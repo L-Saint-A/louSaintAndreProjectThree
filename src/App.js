@@ -21,40 +21,41 @@ useEffect( ()=> {
     setWeather(result.data.data.weather)
   });
 }, []);  
-
-console.log(weather)
+console.log('data', weather)
 
 return (
 
     <div className="App wrapper">
       <h1>Ooooooh, hello...</h1>
-      <form action="submit">
-        <div id="userChoice1">
-        <label for="town">Choose a weather town:   </label>
-        <select id="town" name="town">
-        <option value="Gatineau">Hull</option>
-        <option value="Toronto">Toronto</option>
-        <option value="Norman Wells">Norman Wells</option>
-        <option value="Vik">Vik</option>
-        </select> 
-        </div>
-      </form>
-      <form action="submit">
-        <div id="userChoice2">
-        <label for="forecast">Choose a weather time:   </label>
-        <select id="forecast" name="forecast">
-        <option value="3">3</option>
-        <option value="5">5</option>
-        <option value="7">7</option>
-        </select> 
-        </div>
-      </form>
+      <div>
+        <form action="submit">
+          <div id="userChoice1">
+          <label for="town">Choose a weather town:   </label>
+          <select id="town" name="town">
+          <option value="Gatineau">Hull</option>
+          <option value="Toronto">Toronto</option>
+          <option value="Norman Wells">Norman Wells</option>
+          <option value="Vik">Vik</option>
+          </select> 
+          </div>
+        </form>
+        <form action="submit">
+          <div id="userChoice2">
+          <label for="forecast">Choose a weather time:   </label>
+          <select id="forecast" name="forecast">
+          <option value="3">3</option>
+          <option value="5">5</option>
+          <option value="7">7</option>
+          </select> 
+          </div>
+        </form>
+      </div>
       <div className="container">
-        {
+          {
             weather.map( (oneDay) => {
               return <WeatherSectionOne key={oneDay.date} date={oneDay.date} high={oneDay.maxtempC} low={oneDay.mintempC}/>
             })
-        }
+          }
       </div>
     </div>
   );

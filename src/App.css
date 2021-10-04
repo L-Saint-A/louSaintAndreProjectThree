@@ -3,11 +3,11 @@
 }
 
 html {
-  background-color: rgb(115, 2, 196);
+  background-color: rgb(99, 8, 163);
 }
 
 h1 {
-  color: greenyellow;
+  color: rgb(143, 221, 25);
   font-family: 'Creepster', cursive;
   font-size: 80px;
 }
@@ -27,6 +27,10 @@ h1 {
 
 .weatherBit {
   display: inline-flex;
+  font-family: 'Arvo', serif;
+  color: rgb(143, 221, 25);
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .weatherTab {
@@ -37,4 +41,30 @@ h1 {
   padding: 8px;
   height: 50vh;
   flex: 1 0 auto;
+}
+form {
+  font-family: 'Arvo', serif;
+  color: rgb(143, 221, 25);
+  font-size: 22px;
+}
+select {
+  font-family: 'Arvo', serif;
+  font: 20px;
+}
+
+@media (max-width: 1240px) {
+  .container {
+    background: lightcoral;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .weatherBit {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+  }
 }
