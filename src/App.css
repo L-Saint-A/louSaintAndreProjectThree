@@ -2,8 +2,14 @@
   text-align: center;
 }
 
+html {
+  background-color: rgb(115, 2, 196);
+}
+
 h1 {
-  color: hotpink;
+  color: greenyellow;
+  font-family: 'Creepster', cursive;
+  font-size: 80px;
 }
 
 .wrapper {
@@ -16,6 +22,7 @@ h1 {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-top: 40px;
 }
 
 .weatherBit {
