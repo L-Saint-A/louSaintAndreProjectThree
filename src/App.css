@@ -3,12 +3,15 @@
 }
 
 html {
-  background-color: rgb(99, 8, 163);
-  background-image: url(./project3BG.png);
+  background-color: rgb(23, 2, 39);
+  background-image: url(./backgroundImg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
 }
 
 h1 {
-  color: rgb(143, 221, 25);
+  color: #FFCA3A;
   font-family: 'Creepster', cursive;
   font-size: 80px;
 }
@@ -29,39 +32,61 @@ h1 {
 .weatherBit {
   display: inline-flex;
   font-family: 'Arvo', serif;
-  color: rgb(143, 221, 25);
   font-size: 22px;
   font-weight: bold;
-  background-color: grey;
+  background-color: rgba(145, 32, 32, 0.589);
+  border-radius: 8px;
 }
 
 .weatherTab {
   display: flex;
   flex-direction: column;
   justify-content: end;
-  border: 5px solid black;
-  padding: 8px;
+  padding: 12px;
   height: 50vh;
   flex: 1 0 auto;
 }
+div p {
+  color: #FFCA3A;
+}
+
 form {
   font-family: 'Arvo', serif;
-  color: rgb(143, 221, 25);
   font-weight: bold;
   font-size: 22px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-}
-.userChoice1 select {
-  display: flex;
   align-items: center;
 }
 
 select {
   font-family: 'Arvo', serif;
-  font: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  padding: 4px 12px;
+  background-color: rgba(145, 32, 32, 0.589);
+  border: 2.8px #FFCA3A solid;
+  color: #FFCA3A;
+  font-weight: bold;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+select option {
+  font-size: 28px;
+  font-family: 'Arvo', serif;
+}
+
+button {
+  border: 2.8px #FFCA3A solid;
+  color: #FFCA3A;
+  border-radius: 12px;
+  background-color: rgba(145, 32, 32, 0.589);
+  padding: 4px 12px;
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
 }
 
 @media (max-width: 1240px) {

@@ -2,11 +2,12 @@ import {useState, useEffect} from 'react';
 import './App.css';
 import axios from 'axios';
 import WeatherSectionOne from './WeatherSectionOne';
+import WeatherForm from './WeatherForm.js';
 
 function App() {
 
 const [weather, setWeather] = useState([]);
-const [input, setInput] = useState('');
+
 
 
 useEffect( ()=> {
@@ -29,32 +30,14 @@ console.log('data', weather)
 return (
 
     <div className="App wrapper">
-      <h1>Ooooooh, hello...</h1>
+      <h1>le WEATHER POUR VOUS?</h1>
       <div>
-        <form>
-          <div id="userChoice1">
-          <label for="town"><i class="fas fa-globe"></i></label>
-          <select id="town" name="town">
-          <option value="Gatineau">Hull</option>
-          <option value="Toronto">Toronto</option>
-          <option value="Norman Wells">Norman Wells</option>
-          <option value="Vik">Vik</option>
-          </select> 
-          </div>
-          <div id="userChoice2">
-          <label for="forecast">Choose a weather time:   </label>
-          <select id="forecast" name="forecast">
-          <option value="3">3</option>
-          <option value="5">5</option>
-          <option value="7">7</option>
-          </select> 
-          </div>
-        </form>
+        <WeatherForm/>
       </div>
       <div className="container">
           {
             weather.map( (oneDay) => {
-              return <WeatherSectionOne key={oneDay.date} date={oneDay.date} high={oneDay.maxtempC} low={oneDay.mintempC}/>
+              return <WeatherSectionOne key={oneDay.date} date={oneDay.date} high={oneDay.maxtempC} low={oneDay.mintempC} moon={oneDay.astronomy}/>
             })
 
           }
