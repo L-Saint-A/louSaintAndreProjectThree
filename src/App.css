@@ -4,6 +4,7 @@
 
 html {
   background-color: rgb(99, 8, 163);
+  background-image: url(./project3BG.png);
 }
 
 h1 {
@@ -31,6 +32,7 @@ h1 {
   color: rgb(143, 221, 25);
   font-size: 22px;
   font-weight: bold;
+  background-color: grey;
 }
 
 .weatherTab {
@@ -45,8 +47,18 @@ h1 {
 form {
   font-family: 'Arvo', serif;
   color: rgb(143, 221, 25);
+  font-weight: bold;
   font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
 }
+.userChoice1 select {
+  display: flex;
+  align-items: center;
+}
+
 select {
   font-family: 'Arvo', serif;
   font: 20px;
@@ -54,17 +66,18 @@ select {
 
 @media (max-width: 1240px) {
   .container {
-    background: lightcoral;
+
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
     width: 100%;
   }
   .weatherBit {
-    height: auto;
     width: 100%;
-    display: flex;
-    justify-content: left;
+
+  }
+  .weatherTab {
+    height: auto;
     align-items: flex-start;
   }
 }

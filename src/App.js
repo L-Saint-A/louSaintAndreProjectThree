@@ -6,6 +6,8 @@ import WeatherSectionOne from './WeatherSectionOne';
 function App() {
 
 const [weather, setWeather] = useState([]);
+const [input, setInput] = useState('');
+
 
 useEffect( ()=> {
   axios({
@@ -19,6 +21,7 @@ useEffect( ()=> {
     }
   }).then( (result) => {
     setWeather(result.data.data.weather)
+    console.log(result.data.data)
   });
 }, []);  
 console.log('data', weather)
@@ -28,9 +31,9 @@ return (
     <div className="App wrapper">
       <h1>Ooooooh, hello...</h1>
       <div>
-        <form action="submit">
+        <form>
           <div id="userChoice1">
-          <label for="town">Choose a weather town:   </label>
+          <label for="town"><i class="fas fa-globe"></i></label>
           <select id="town" name="town">
           <option value="Gatineau">Hull</option>
           <option value="Toronto">Toronto</option>
@@ -38,8 +41,6 @@ return (
           <option value="Vik">Vik</option>
           </select> 
           </div>
-        </form>
-        <form action="submit">
           <div id="userChoice2">
           <label for="forecast">Choose a weather time:   </label>
           <select id="forecast" name="forecast">
@@ -55,6 +56,7 @@ return (
             weather.map( (oneDay) => {
               return <WeatherSectionOne key={oneDay.date} date={oneDay.date} high={oneDay.maxtempC} low={oneDay.mintempC}/>
             })
+
           }
       </div>
     </div>

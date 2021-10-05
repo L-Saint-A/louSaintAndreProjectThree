@@ -1,6 +1,7 @@
 function WeatherSectionOne(props) {
 
     const {key, date, high, low} = props
+    
     return(
         <div className="weatherBit">
             <div className="weatherTab" key={key}>
