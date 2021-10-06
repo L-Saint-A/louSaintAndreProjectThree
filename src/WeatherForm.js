@@ -7,8 +7,15 @@ function WeatherForm(props) {
     const handleUserChoice = (e)=>{
         setUserChoice(e.target.value);
     }
+
+    const handleGetWeather = (e)=>{
+        e.preventDefault()
+        props.getWeather(userChoice)
+    }
+
+
     return(
-        <form onSubmit={ (e) => {props.getPhotos(e, userChoice)}}>
+        <form onSubmit={ (e) => {handleGetWeather(e)}}>
             <select 
             id="locations" 
             name="location" 
@@ -20,6 +27,8 @@ function WeatherForm(props) {
                 <option value="Vik">Vik</option>
                 <option value="Osaka">Osaka</option>
                 <option value="Norman Wells">Norman Wells</option>
+                <option value="Edmonton">Oilers Nation</option>
+                <option value="Vancouver">and Vancouver</option>
             </select>
             <button type="submit">The Next 7 Days</button>
         </form>
