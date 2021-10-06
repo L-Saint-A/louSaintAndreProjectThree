@@ -8,8 +8,6 @@ function App() {
 
 const [weather, setWeather] = useState([]);
 
-
-
 useEffect( ()=> {
   axios({
     method: 'GET',
@@ -22,7 +20,6 @@ useEffect( ()=> {
     }
   }).then( (result) => {
     setWeather(result.data.data.weather)
-    console.log(result.data.data)
   });
 }, []);  
 console.log('data', weather)
@@ -30,7 +27,7 @@ console.log('data', weather)
 return (
 
     <div className="App wrapper">
-      <h1>le WEATHER POUR VOUS?</h1>
+      <h1>the WEATHER outside is frightful!! </h1>
       <div>
         <WeatherForm/>
       </div>
@@ -42,6 +39,7 @@ return (
 
           }
       </div>
+      <footer>Created @ Juno College</footer>
     </div>
   );
 }
