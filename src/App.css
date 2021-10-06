@@ -26,6 +26,7 @@ h1 {
   font-family: 'Creepster', cursive;
   font-size: 80px;
   text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  letter-spacing: 1.12px;
 }
 
 .wrapper {
@@ -83,6 +84,7 @@ select {
   font-size: 28px;
   cursor: pointer;
   font-weight: 900;
+  letter-spacing: 1.12px;
 }
 
 .fa-moon {
@@ -114,22 +116,33 @@ footer {
   justify-content: center;
   font-family: 'Arvo', serif;
   color: rgba(145, 32, 32);
+  font-weight: bold;
+  text-shadow: -2px 0 rgb(107, 89, 89), 0 1px rgb(148, 130, 130), 1px 0 rgb(189, 189, 189), 0 -1px rgb(63, 62, 62);
+  letter-spacing: 1.12px;
 }
 
 @media (max-width: 1240px) {
-  .container {
 
+  html {
+    background-color: rgb(23, 2, 39);
+    background-image: url(./backgroundImg.jpg);
+    background-size: contain;
+    background-position: top;
+    min-height: 50vh;
+  }
+  .container {
     flex-direction: column;
-    justify-content: left;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
   }
   .weatherBit {
-    width: 100%;
-
+    width: 85%;
+    margin: 18px 0;
   }
   .weatherTab {
     height: auto;
-    align-items: flex-start;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
   }
 }
