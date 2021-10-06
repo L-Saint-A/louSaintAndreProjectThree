@@ -22,14 +22,37 @@ useEffect( ()=> {
     setWeather(result.data.data.weather)
   });
 }, []);  
-console.log('data', weather)
+
+
+
+const getWeather = (town) => {
+  axios({
+    method: 'GET',
+    url: `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=5006b4f52810441184b183358212809`,
+    dataResponse: 'json',
+    params: {
+      q: town,
+      num_of_days: 7,
+      format: 'json'
+    }
+  }).then( (result) => {
+    setWeather(result.data.data.weather)
+  });
+
+}
+
+
+
+
+
+
 
 return (
 
     <div className="App wrapper">
       <h1>the WEATHER outside is frightful!! </h1>
       <div>
-        <WeatherForm/>
+        <WeatherForm getWeather={getWeather} />
       </div>
       <div className="container">
           {
