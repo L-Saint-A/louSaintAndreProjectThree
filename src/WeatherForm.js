@@ -30,6 +30,8 @@ function WeatherForm(props) {
                 <option value="Norman Wells">Norman Wells</option>
                 <option value="Edmonton">Oilers Nation</option>
                 <option value="Vancouver">and Vancouver</option>
+                <option value="Regina">and Ragina</option>
+                <option value="Munster">and Münster for Lazer</option>
             </select>
             <button type="submit">The Next 7 Days</button>
         </form>
