@@ -53,9 +53,10 @@ return (
                 key={oneDay.date} 
                 date={oneDay.date} 
                 high={oneDay.maxtempC} 
+                average={oneDay.avgtempC}
                 low={oneDay.mintempC} 
                 snow={oneDay.totalSnow_cm} 
-                xxx={oneDay.astronomy}
+                
               />
             })
 
