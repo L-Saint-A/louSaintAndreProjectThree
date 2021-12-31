@@ -49,7 +49,14 @@ return (
       <div className="container">
           {
             weather.map( (oneDay) => {
-              return <WeatherSectionOne key={oneDay.date} date={oneDay.date} high={oneDay.maxtempC} low={oneDay.mintempC} moon={oneDay.astronomy}/>
+              return <WeatherSectionOne 
+                key={oneDay.date} 
+                date={oneDay.date} 
+                high={oneDay.maxtempC} 
+                low={oneDay.mintempC} 
+                snow={oneDay.totalSnow_cm} 
+                xxx={oneDay.astronomy}
+              />
             })
 
           }
