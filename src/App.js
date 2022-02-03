@@ -11,7 +11,7 @@ const [weather, setWeather] = useState([]);
 useEffect( ()=> {
   axios({
     method: 'GET',
-    url: `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=6ff5d0608cbb47d69b5230426212911`,
+    url: `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=d5ffd3ff693345fb906155220220302`,
     dataResponse: 'json',
     params: {
       q: 'Toronto',
@@ -26,7 +26,7 @@ useEffect( ()=> {
 const getWeather = (town) => {
   axios({
     method: 'GET',
-    url: `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=6ff5d0608cbb47d69b5230426212911`,
+    url: `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=d5ffd3ff693345fb906155220220302`,
     dataResponse: 'json',
     params: {
       q: town,
